@@ -1,0 +1,24 @@
+{
+  "version": "2.0",
+  "logging": {
+    "applicationInsights": {
+      "samplingSettings": {
+        "isEnabled": true,
+        "excludedTypes": "Request"
+      }
+    },
+    "extensions": {
+      "eventHubs": {
+          "batchCheckpointFrequency": 1,
+          "eventProcessorOptions": {
+              "maxBatchSize": 10,
+              "prefetchCount": 300
+          }
+      }
+  }
+  },
+  "extensionBundle": {
+    "id": "Microsoft.Azure.Functions.ExtensionBundle",
+    "version": "[1.*, 2.0.0)"
+  }
+}
